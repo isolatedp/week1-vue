@@ -21,7 +21,11 @@
           <span v-else>{{ product.name }}</span>
         </td>
         <td>
-          <input v-if="isEdit && editProduct" v-model="product.description" type="text" />
+          <input
+            v-if="isEdit && editProduct && editProduct.id === product.id"
+            v-model="product.description"
+            type="text"
+          />
           <span v-else>{{ product.description }}</span>
         </td>
         <td>{{ product.price }}</td>
